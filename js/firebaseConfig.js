@@ -1,6 +1,6 @@
 // firebaseConfig.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 // Configuração do Firebase
@@ -16,9 +16,9 @@ const firebaseConfig = {
 
 // Inicialização do Firebase
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
 
 // Exporta apenas o banco de dados
-export { database };
+export const db = getFirestore(app);
+
 export const auth = getAuth(app);
 export { onAuthStateChanged };

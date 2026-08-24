@@ -1,6 +1,7 @@
 /* index */
+/* LÓGICA DO CADASTRO */
 import { auth } from "./firebaseConfig.js";
-import { createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 // Seleciona o formulário
 const btCadastrar = document.getElementById("btnCadastrar");
@@ -54,6 +55,53 @@ btCadastrar.addEventListener('click', async () => {
     }
   }
 });
+}
+
+/* LÓGICA DO LOGIN */
+const botaoLogin = document.getElementById('btnLogin');
+
+// A verificação 'if' evita erros se o script rodar em páginas que não têm esse botão
+if (botaoLogin) {
+  botaoLogin.addEventListener('click', async () => {
+    // 1. Pega os valores digitados nos inputs da tela de login
+    const email = document.getElementById('emailLogin').value;
+    const senha = document.getElementById('senhaLogin').value;
+
+    // 2. Valida se os campos não estão vazios
+    if (!email || !senha) {
+      alert("Por favor, preencha o e-mail e a senha.");
+      return;
+    }
+
+    try {
+      // 3. Autentica o usuário no Firebase
+      const userCredential = await signInWithEmailAndPassword(auth, email, senha);
+      const user = userCredential.user;
+
+      console.log("Usuário logado:", user);
+      alert(`Bem-vindo(a) de volta!`);
+
+      // 4. Redireciona para a página principal 
+      window.location.href = "/html/pagInicial.html";
+
+    } catch (error) {
+      console.error("Erro ao fazer login:", error.code);
+
+      // Tratamento amigável para os erros comuns de login
+      switch (error.code) {
+        case 'auth/invalid-credential':
+        case 'auth/user-not-found':
+        case 'auth/wrong-password':
+          alert("E-mail ou senha incorretos.");
+          break;
+        case 'auth/invalid-email':
+          alert("Formato de e-mail inválido.");
+          break;
+        default:
+          alert("Erro ao entrar: " + error.message);
+      }
+    }
+  });
 }
 
 /* avlUsuarios / pagInicial */

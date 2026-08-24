@@ -13,6 +13,7 @@
   background-color: #222222; /* Cor de fundo escura do seu cabeçalho */
   padding: 10px 20px;
   width: 100%;
+  height: 10vh;
 }
 
 /* Fixa o menu suspenso na ponta esquerda */
@@ -72,7 +73,7 @@
 }
 
 .dropdown-menu a:hover {
-  color: #ff8c00; /* Destaque ao passar o mouse */
+  color: rgb(255, 140, 0); /* Destaque ao passar o mouse */
 }
 
 /* Grupo de botões no centro perfeito da tela */
@@ -117,5 +118,7 @@
 }
 
 main{
-    
+  width: 100vw;
+  height: 90vh;
+  background-color: rgb(182, 100, 0);
 }
