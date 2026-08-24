@@ -1,8 +1,68 @@
+/* index */
+import { auth } from "./firebaseConfig.js";
+import { createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+// Seleciona o formulário
+const btCadastrar = document.getElementById("btnCadastrar");
+
+// Escuta o envio do formulário
+if (btCadastrar){
+btCadastrar.addEventListener('click', async () => {
+  
+  // Pega os valores digitados nos inputs
+  const nome = document.getElementById('usuarioCadastro').value;
+  const email = document.getElementById('emailCadastro').value;
+  const senha = document.getElementById('senhaCadastro').value;
+
+  // Validação simples de tamanho de senha
+  if (senha.length < 6) {
+    alert("A senha deve ter pelo menos 6 caracteres.");
+    return;
+  }
+
+  try {
+    // 1. Cria a conta no Firebase
+    const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
+    const user = userCredential.user;
+
+    // 2. Salva o nome do usuário no perfil dele
+    await updateProfile(user, {
+      displayName: nome
+    });
+
+    alert(`Conta criada com sucesso! Bem-vindo(a), ${nome}`);
+    
+    // 3. Redireciona para a página principal (ajuste o nome do arquivo se necessário)
+    window.location.href = "/html/pagInicial.html";
+
+  } catch (error) {
+    console.error("Erro no cadastro:", error);
+
+    // Mensagens amigáveis para erros do Firebase
+    switch (error.code) {
+      case 'auth/email-already-in-use':
+        alert("Este e-mail já está cadastrado.");
+        break;
+      case 'auth/invalid-email':
+        alert("E-mail inválido.");
+        break;
+      case 'auth/weak-password':
+        alert("Senha muito fraca.");
+        break;
+      default:
+        alert("Erro ao realizar cadastro: " + error.message);
+    }
+  }
+});
+}
+
+/* avlUsuarios / pagInicial */
 /* Parte relativa ao menu suspenso da troca de telas */
 const BtnMenu = document.getElementById("btnMenu");
 const menuLinks = document.getElementById("menuLinks");
 
 // Alterna a visibilidade ao clicar no botão
+if (BtnMenu){
 BtnMenu.addEventListener('click', (event) => {
   event.stopPropagation();
   menuLinks.classList.toggle('show');
@@ -12,11 +72,10 @@ BtnMenu.addEventListener('click', (event) => {
 document.addEventListener('click', () => {
   menuLinks.classList.remove('show');
 });
+}
 
-/*
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "./firebaseConfig.js";
 
-const auth = getAuth();
 const userAvatar = document.getElementById('userAvatar');
 
 // Lista de cores sólidas agradáveis (estilo Google)
@@ -54,4 +113,3 @@ onAuthStateChanged(auth, (user) => {
     userAvatar.style.backgroundColor = '#757575';
   }
 });
-*/
