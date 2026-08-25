@@ -89,7 +89,7 @@ if (botaoLogin) {
       alert(`Bem-vindo(a) de volta!`);
 
       // 4. Redireciona para a página principal 
-      window.location.href = "html/pagInicial.html";
+      window.location.href = "projeto-superSenai/html/pagInicial.html";
 
     } catch (error) {
       console.error("Erro ao fazer login:", error.code);
