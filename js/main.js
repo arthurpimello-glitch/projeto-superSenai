@@ -41,7 +41,7 @@ btCadastrar.addEventListener('click', async () => {
     alert(`Conta criada com sucesso! Bem-vindo(a), ${nome}`);
     
     // 3. Redireciona para a página principal (ajuste o nome do arquivo se necessário)
-    window.location.href = "/html/pagInicial.html";
+    window.location.href = "./html/pagInicial.html";
 
   } catch (error) {
     console.error("Erro no cadastro:", error);
@@ -89,7 +89,7 @@ if (botaoLogin) {
       alert(`Bem-vindo(a) de volta!`);
 
       // 4. Redireciona para a página principal 
-      window.location.href = "/html/pagInicial.html";
+      window.location.href = "./html/pagInicial.html";
 
     } catch (error) {
       console.error("Erro ao fazer login:", error.code);
