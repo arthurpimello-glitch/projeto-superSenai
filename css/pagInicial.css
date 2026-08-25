@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
 
 /* Barra superior */
@@ -119,6 +120,200 @@
 
 main{
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   background-color: rgb(182, 100, 0);
 }
+
+/* Card do Formulário */
+.container-review {
+  position: relative;
+  top: 10px;
+  background-color: #222222;
+  color: #ffffff;
+  max-width: 500px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-family: sans-serif;
+}
+
+.container-review h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #ff8c00; /* Cor laranja do seu tema */
+}
+
+/* Estilo dos Campos */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.campo label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.campo input[type="text"],
+.campo input[type="number"],
+.campo textarea {
+  background-color: #333333;
+  border: 1px solid #444444;
+  border-radius: 6px;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  border-color: #ff8c00;
+}
+
+/* Checkbox */
+.campo-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.campo-checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff8c00; /* Altera a cor do check para laranja */
+}
+
+/* Botão Enviar */
+.btn-salvar {
+  width: 100%;
+  background-color: #ff8c00;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-salvar:hover {
+  background-color: #e07b00;
+}
+
+/* Botões de seleção Filme / Série */
+.campo-categoria {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-categoria {
+  flex: 1;
+  padding: 10px;
+  background-color: #333333;
+  color: #888888;
+  border: 1px solid #444444;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Categoria Selecionada */
+.btn-categoria.active {
+  background-color: #ff8c00;
+  color: #ffffff;
+  border-color: #ff8c00;
+}
+
+/* Container das Reviews */
+.container-lista-reviews {
+  max-width: 500px;
+  margin: 20px auto;
+  font-family: sans-serif;
+}
+
+.container-lista-reviews h3 {
+  color: #ffffff;
+  border-bottom: 2px solid #ff8c00;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+/* Card Individual de Review */
+.card-review {
+  background-color: #222222;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.titulo-card {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff8c00;
+}
+
+.badge-tipo {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.badge-filme {
+  background-color: #007acc;
+  color: #fff;
+}
+
+.badge-serie {
+  background-color: #9b59b6;
+  color: #fff;
+}
+
+.info-card {
+  display: flex;
+  gap: 15px;
+  font-size: 13px;
+  color: #aaaaaa;
+  margin-bottom: 10px;
+}
+
+.nota-destaque {
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+.comentario-card {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #dddddd;
+  background-color: #1a1a1a;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.mensagem-vazio {
+  color: #222222;
+  font-style: italic;
+  text-align: center;
+}
+

@@ -122,3 +122,92 @@ main{
   height: 90vh;
   background-color: rgb(182, 100, 0);
 }
+
+/* Container Principal em Duas Colunas */
+.container-feed {
+  display: flex;
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.coluna-feed {
+  flex: 1; /* Faz as duas colunas dividirem o espaço igualmente */
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.titulo-coluna {
+  font-size: 20px;
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #333333;
+}
+
+.filme-titulo {
+  color: #007acc;
+  border-color: #007acc;
+}
+
+.serie-titulo {
+  color: #9b59b6;
+  border-color: #9b59b6;
+}
+
+/* Card no Feed Público */
+.card-feed {
+  background-color: #262626;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 4px solid #333;
+}
+
+.card-feed.filme {
+  border-left-color: #007acc;
+}
+
+.card-feed.serie {
+  border-left-color: #9b59b6;
+}
+
+.autor-info {
+  font-size: 12px;
+  color: #ff8c00;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.titulo-feed {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.detalhes-feed {
+  display: flex;
+  gap: 15px;
+  font-size: 13px;
+  color: #bbbbbb;
+  margin-bottom: 10px;
+}
+
+.comentario-feed {
+  font-size: 13px;
+  color: #dddddd;
+  background-color: #1a1a1a;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 1.4;
+}
+
+/* Responsividade: no celular fica uma coluna embaixo da outra */
+@media (max-width: 768px) {
+  .container-feed {
+    flex-direction: column;
+  }
+}

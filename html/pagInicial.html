@@ -20,10 +20,12 @@
         </div>
 
         <!-- Centro: Botões de Navegação -->
+         <!-- 
         <div class="botoes-centro">
             <button class="btn-nav">Séries</button>
             <button class="btn-nav">Filmes</button>
         </div>
+        -->
         <div id="Usuario">
             <div class="user-avatar" id="userAvatar">
                 <!-- A letra vai ser inserida via JS -->
@@ -31,9 +33,48 @@
         </div>
     </header>
     <main>
-       
+  <div class="container-review">
+  <h2>Adicionar Avaliação</h2>
+
+  <!-- Seleção de Categoria (Filme ou Série) -->
+  <div class="campo-categoria">
+    <button type="button" class="btn-categoria active" data-type="filme">Filme</button>
+    <button type="button" class="btn-categoria" data-type="serie">Série</button>
+  </div>
+  
+  <div class="campo">
+    <label for="nomeFilme">Nome do Título:</label>
+    <input type="text" id="nomeFilme" placeholder="Ex: Interstellar ou Breaking Bad" required>
+  </div>
+
+  <div class="campo">
+    <label for="notaFilme">Nota (1 a 10):</label>
+    <input type="number" id="notaFilme" min="1" max="10" placeholder="10" required>
+  </div>
+
+  <div class="campo-checkbox">
+    <input type="checkbox" id="assistiriaDeNovo">
+    <label for="assistiriaDeNovo">Assistiria de novo?</label>
+  </div>
+
+  <div class="campo">
+    <label for="comentarioFilme">Seu Comentário / Review:</label>
+    <textarea id="comentarioFilme" rows="4" placeholder="O que achou?" required></textarea>
+  </div>
+
+  <button type="button" id="btnSalvarReview" class="btn-salvar">Publicar Avaliação</button>
+</div>
+<!-- Seção onde as reviews serão renderizadas -->
+<div class="container-lista-reviews">
+  <h3>Minhas Avaliações</h3>
+  <div id="listaReviews">
+    <p class="mensagem-vazio">Carregando avaliações...</p>
+  </div>
+</div>
     </main>
     <script type="module" src="/js/main.js"></script>
     <link rel="stylesheet" href="/css/pagInicial.css">
+
+<footer></footer>
 </body>
 </html>

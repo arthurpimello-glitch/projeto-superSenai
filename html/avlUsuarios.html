@@ -20,19 +20,38 @@
         </div>
 
         <!-- Centro: Botões de Navegação -->
+         
         <div class="botoes-centro">
-            <button class="btn-nav">Séries</button>
-            <button class="btn-nav">Filmes</button>
+            <h1>Catálogo de Reviews</h1>
         </div>
+        
         <div id="Usuario">
             <div class="user-avatar" id="userAvatar">
                 <!-- A letra vai ser inserida via JS -->
             </div>
         </div>
     </header>
-    <main>
-       
-    </main>
+   <main class="container-feed">
+    <!-- Coluna de Filmes -->
+    <section class="coluna-feed">
+      <h2 class="titulo-coluna filme-titulo">🎬 Filmes</h2>
+      <div id="feedFilmes" class="lista-feed">
+        <p class="mensagem-vazio">Carregando filmes...</p>
+      </div>
+    </section>
+
+    <!-- Coluna de Séries -->
+    <section class="coluna-feed">
+      <h2 class="titulo-coluna serie-titulo">📺 Séries</h2>
+      <div id="feedSeries" class="lista-feed">
+        <p class="mensagem-vazio">Carregando séries...</p>
+      </div>
+    </section>
+  </main>
+
+    <footer>
+        
+    </footer>
     <script type="module" src="/js/main.js"></script>
     <link rel="stylesheet" href="/css/avlUsuarios.css">
 </body>
