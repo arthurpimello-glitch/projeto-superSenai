@@ -5,6 +5,11 @@
     
 }
 
+body {
+    background-color: rgb(182, 100, 0);
+    min-height: 100vh;
+}
+
 /* Barra superior */
 .header-container {
   position: relative;
@@ -120,9 +125,10 @@
 }
 
 main{
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(182, 100, 0);
+  width: 100%;
+    min-height: 90vh;
+    background-color: rgb(182, 100, 0);
+    padding-top: 20px; /* Dá um pequeno espaçamento do topo */
 }
 
 /* Card do Formulário */
