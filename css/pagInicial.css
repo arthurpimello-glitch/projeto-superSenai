@@ -81,6 +81,7 @@
 .botoes-centro {
   display: flex;
   gap: 10px; /* Espaçamento entre Séries e Filmes */
+  color: #ff8c00;
 }
 
 /* Estilo para os botões do centro */
